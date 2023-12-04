@@ -96,12 +96,11 @@ namespace WindowsGSM.Plugins
 
             // Prepare start parameter
 
-            string param = $"{_serverData.ServerParam}";
-            param += "-NOSTEAM -log";
+            string param = $"-NOSTEAM -log {_serverData.ServerParam}";
             param += string.IsNullOrWhiteSpace(_serverData.ServerPort) ? string.Empty : $" -PORT={_serverData.ServerPort}";
             param += string.IsNullOrWhiteSpace(_serverData.ServerQueryPort) ? string.Empty : $" -QueryPort={_serverData.ServerQueryPort}";
             param += string.IsNullOrWhiteSpace(_serverData.ServerName) ? string.Empty : $" -SteamServerName={_serverData.ServerName}";
-            // param += string.IsNullOrWhiteSpace(_serverData.ServerMaxPlayer) ? string.Empty : $" -MaxPlayers={_serverData.ServerMaxPlayer}";
+            param += string.IsNullOrWhiteSpace(_serverData.ServerMaxPlayer) ? string.Empty : $" -MaxPlayers={_serverData.ServerMaxPlayer}";
 
 
 
